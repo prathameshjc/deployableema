@@ -5,7 +5,6 @@
     "npm": "6.x",
     "node": "12.18.2"
   },
-  "description": "",
   "main": "index.js",
   "start": "node Server.js",
   "heroku-postbuild": "cd client && npm install && npm run build",
@@ -22,9 +21,20 @@
     "pg-hstore": "^2.3.3",
     "restify": "^8.5.1",
     "restify-cors-middleware2": "^2.1.0",
-    "sequelize": "^6.3.3"
+    "sequelize": "^6.3.3",
+    "serve-static-restify": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathameshjc/deployableema.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/prathameshjc/deployableema/issues"
+  },
+  "homepage": "https://github.com/prathameshjc/deployableema#readme",
+  "description": ""
 }

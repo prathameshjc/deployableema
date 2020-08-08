@@ -4,6 +4,7 @@ const corsMiddleware = require('restify-cors-middleware2');
 const { data } = require('jquery');
 const PORT=process.env.PORT || 8080;
 var path=require('path')
+var serveStatic = require('serve-static-restify')
 var server=restify.createServer() //server created
 
 server.use(
@@ -44,7 +45,7 @@ server.get('/employees',demotable)
 
 if(process.env.NODE_ENV==='production')
 {
-  server.get('/client/build/*', restify.plugins.serveStatic({
+  server.get('*', restify.plugins.serveStatic({
     directory: __dirname,
     default: 'index.html'
    }));
