@@ -49,9 +49,9 @@ server.get('/employees',demotable)
 //   res.sendFile(path.join(__dirname,'client','build','index.html'))
 // })
 // }
-// server.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client/build/index.html"));
-// });
+server.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 server.listen(PORT, function(){
     console.log("server started...")
 })
