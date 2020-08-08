@@ -44,7 +44,7 @@ server.get('/employees',demotable)
 
 if(process.env.NODE_ENV==='production')
 {
-  server.get('client/build/*', restify.plugins.serveStatic({
+  server.get('/client/build/*', restify.plugins.serveStatic({
     directory: __dirname,
     default: 'index.html'
    }));
