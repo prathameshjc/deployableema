@@ -42,16 +42,16 @@ server.use(restify.plugins.bodyParser());
 server.get('/login',logIn)
 server.get('/employees',demotable)
 
-// if(process.env.NODE_ENV==='production')
-// {
-// server.use(restify.serveStatic('client/build'))
-// server.get('*',(req,res)=>{
-//   res.sendFile(path.join(__dirname,'client','build','index.html'))
-// })
-// }
-server.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build/index.html"));
-});
+if(process.env.NODE_ENV==='production')
+{
+server.use(restify.serveStatic('client/build'))
+server.get('*',(req,res)=>{
+  res.sendFile(path.join(__dirname,'client','build','index.html'))
+})
+}
+// server.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build/index.html"));
+// });
 server.listen(PORT, function(){
     console.log("server started...")
 })
