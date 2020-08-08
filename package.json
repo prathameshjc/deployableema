@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "engines": {
+    "npm": "6.x",
+    "node": "12.18.2"
+  },
+  "description": "",
+  "main": "index.js",
+  "start": "node Server.js",
+  "heroku-postbuild": "cd client && npm install && npm run build",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "jquery": "^3.5.1",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "restify": "^8.5.1",
+    "restify-cors-middleware2": "^2.1.0",
+    "sequelize": "^6.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
