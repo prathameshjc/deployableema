@@ -44,7 +44,7 @@ server.get('/employees',demotable)
 
 if(process.env.NODE_ENV==='production')
 {
-server.use(restify.static('client/build'))
+server.use(restify.serveStatic('client/build'))
 server.get('*',(req,res)=>{
   res.sendFile(path.join(__dirname,'client','build','index.html'))
 })
