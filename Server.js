@@ -47,7 +47,7 @@ server.get('/employees',demotable)
 if(process.env.NODE_ENV==='production')
 {
   server.get(/.*/, restify.plugins.serveStatic({
-    directory: "sankey-ema",
+    directory: __dirname,
     default: 'index.html'
    }));
 
