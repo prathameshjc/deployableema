@@ -38,15 +38,15 @@ console.log(__dirname);
 console.log(path.join(__dirname, "client/build"));
 //get data from login form
 
-server.post('/note', userCreation);  
+server.post('/', userCreation);  
 server.use(restify.plugins.bodyParser());
 server.get('/login',logIn)
 server.get('/employees',demotable)
 
 if(process.env.NODE_ENV==='production')
 {
-  server.get(/.*/, restify.plugins.serveStatic({
-    directory: "sankey-ema",
+  server.get('/', restify.plugins.serveStatic({
+    directory: __dirname,
     default: 'index.html'
    }));
 

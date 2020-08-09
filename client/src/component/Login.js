@@ -48,7 +48,7 @@ submitHandler=event=>{
   var {history}=this.props;
     console.log("----------------------",this.state);
     
-		axios.post('http://localhost:8080/note', data,{
+		axios.post('http://localhost:8080/', data,{
       headers: {'Content-Type':'application/json'}
     }).then(function(res){
       console.log("----------------------response",res);
