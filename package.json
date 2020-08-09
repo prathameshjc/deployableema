@@ -22,6 +22,7 @@
     "restify": "^8.5.1",
     "restify-cors-middleware2": "^2.1.0",
     "sequelize": "^6.3.3",
+    "sequelize-cli": "^6.2.0",
     "serve-static-restify": "^3.0.0"
   },
   "devDependencies": {
