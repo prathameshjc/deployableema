@@ -1,6 +1,5 @@
-
 var restify=require('restify')
-const { logIn,userCreation, demotable } = require('../routes/Function');
+const { logIn,userCreation, demotable } = require('./routes/Function');
 const corsMiddleware = require('restify-cors-middleware2');
 const { data } = require('jquery');
 const PORT=process.env.PORT || 8080;
