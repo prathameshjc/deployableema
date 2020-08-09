@@ -1,6 +1,6 @@
 
 var restify=require('restify')
-const { logIn,userCreation, demotable } = require('./routes/Function');
+const { logIn,userCreation, demotable } = require('../routes/Function');
 const corsMiddleware = require('restify-cors-middleware2');
 const { data } = require('jquery');
 const PORT=process.env.PORT || 8080;
@@ -32,7 +32,7 @@ server.use(cors.actual)
 // if (process.env.NODE_ENV === "production") {
 //   //server static content
 //   //npm run build
-//   server.use(restify.plugins.serveStatic(path.join(__dirname, "client/build")));
+//   server.use(restify.static(path.join(__dirname, "client/build")));
 // }
 
 console.log(__dirname);
@@ -52,13 +52,12 @@ server.get('/employees',demotable)
 
 if(process.env.NODE_ENV==='production')
 {
-  server.get("/",(req,res)=>{ restify.plugins.serveStatic({
+  server.get("/", restify.plugins.serveStatic({
     directory: __dirname,
     default: 'index.html',
     
    })
-   
-  });
+  );
 
 // // server.use(restify.serveStatic('client/build'))
 // // server.get('*',(req,res)=>{
