@@ -1,3 +1,4 @@
+
 var restify=require('restify')
 const { logIn,userCreation, demotable } = require('./routes/Function');
 const corsMiddleware = require('restify-cors-middleware2');
@@ -38,15 +39,15 @@ console.log(__dirname);
 console.log(path.join(__dirname, "client/build"));
 //get data from login form
 
-server.post('/', userCreation);  
+server.post('/note', userCreation);  
 server.use(restify.plugins.bodyParser());
 server.get('/login',logIn)
 server.get('/employees',demotable)
 
 if(process.env.NODE_ENV==='production')
 {
-  server.get('/', restify.plugins.serveStatic({
-    directory: __dirname,
+  server.get(/.*/, restify.plugins.serveStatic({
+    directory: "sankey-ema",
     default: 'index.html'
    }));
 
@@ -60,4 +61,5 @@ if(process.env.NODE_ENV==='production')
 // });
 server.listen(PORT, function(){
     console.log("server started...")
+
 })
