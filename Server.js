@@ -29,11 +29,11 @@ const cors = corsMiddleware({
 server.pre(cors.preflight)
 server.use(cors.actual)
 //setting
-if (process.env.NODE_ENV === "production") {
-  //server static content
-  //npm run build
-  server.use(restify.plugins.serveStatic(path.join(__dirname, "client/build")));
-}
+// if (process.env.NODE_ENV === "production") {
+//   //server static content
+//   //npm run build
+//   server.use(restify.plugins.serveStatic(path.join(__dirname, "client/build")));
+// }
 
 console.log(__dirname);
 console.log(path.join(__dirname, "client/build"));
@@ -50,21 +50,21 @@ server.get('/login',logIn)
 server.get('/employees',demotable)
 
 
-// if(process.env.NODE_ENV==='production')
-// {
-//   server.get("/",(req,res)=>{ restify.plugins.serveStatic({
-//     directory: __dirname,
-//     default: 'index.html',
+if(process.env.NODE_ENV==='production')
+{
+  server.get("/",(req,res)=>{ restify.plugins.serveStatic({
+    directory: __dirname,
+    default: 'index.html',
     
-//    })
+   })
    
-//   });
+  });
 
 // // server.use(restify.serveStatic('client/build'))
 // // server.get('*',(req,res)=>{
 // //   res.sendFile(path.join(__dirname,'client','build','index.html'))
 // // })
-// }
+}
 // server.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "client/build/index.html"));
 // });
