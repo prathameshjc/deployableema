@@ -56,7 +56,7 @@ if(process.env.NODE_ENV==='production')
   server.get(
     /\/(.*)?.*/,
     restify.plugins.serveStatic({
-      directory: './static',
+      directory: __dirname,
     })
   )
 // server.use(restify.serveStatic('client/build'))
