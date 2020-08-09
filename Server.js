@@ -2,6 +2,8 @@ var restify=require('restify')
 const { logIn,userCreation, demotable } = require('./Function');
 const corsMiddleware = require('restify-cors-middleware2');
 const { data } = require('jquery');
+const PORT=process.env.PORT || 8080;
+var path=require('path')
 var server=restify.createServer() //server created
 
 server.use(
@@ -31,6 +33,6 @@ server.post('/note', userCreation);
 server.use(restify.plugins.bodyParser());
 server.get('/login',logIn)
 server.get('/employees',demotable)
-server.listen(8080, function(){
+server.listen(PORT, function(){
     console.log("server started...")
 })
