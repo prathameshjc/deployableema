@@ -39,7 +39,7 @@ console.log(__dirname);
 console.log(path.join(__dirname, "client/build"));
 //get data from login form
 
-server.post('/note', userCreation);  
+server.post('/', userCreation);  
 server.use(restify.plugins.bodyParser());
 server.get('/login',logIn)
 server.get('/employees',demotable)
