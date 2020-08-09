@@ -32,7 +32,7 @@ server.use(cors.actual)
 if (process.env.NODE_ENV === "production") {
   //server static content
   //npm run build
-  server.use(restify.static(path.join(__dirname, "client/build")));
+  server.use(restify.plugins.static(path.join(__dirname, "client/build")));
 }
 
 console.log(__dirname);
