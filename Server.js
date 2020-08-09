@@ -55,7 +55,7 @@ if(process.env.NODE_ENV==='production')
   server.get("/", restify.plugins.serveStatic({
     directory: __dirname,
     default: 'index.html',
-    
+    appendRequestPath: false
    })
   );
 
