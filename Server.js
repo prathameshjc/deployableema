@@ -46,14 +46,19 @@ server.get('/employees',demotable)
 
 if(process.env.NODE_ENV==='production')
 {
-  server.get("/",(req,res)=>{ restify.plugins.serveStatic({
-    directory: __dirname,
-    default: 'index.html',
+  // server.get("/",(req,res)=>{ restify.plugins.serveStatic({
+  //   directory: __dirname,
+  //   default: 'index.html',
     
-   })
-   res.sendFile(path.join(__dirname,'client','build','index.html'))
-  });
-
+  //  })
+  //  res.sendFile(path.join(__dirname,'client','build','index.html'))
+  // });
+  server.get(
+    /\/(.*)?.*/,
+    restify.plugins.serveStatic({
+      directory: './static',
+    })
+  )
 // server.use(restify.serveStatic('client/build'))
 // server.get('*',(req,res)=>{
 //   res.sendFile(path.join(__dirname,'client','build','index.html'))
