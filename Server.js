@@ -38,32 +38,33 @@ server.use(cors.actual)
 console.log(__dirname);
 console.log(path.join(__dirname, "client/build"));
 //get data from login form
-
+server.get("/",(req,res)=>{ restify.plugins.serveStatic({
+      directory: __dirname,
+      default: 'index.html',
+      })
+      res.sendFile(path.join(__dirname,'client','build','index.html'))
+    });
 server.post('/', userCreation);  
 server.use(restify.plugins.bodyParser());
 server.get('/login',logIn)
 server.get('/employees',demotable)
 
-if(process.env.NODE_ENV==='production')
-{
-  // server.get("/",(req,res)=>{ restify.plugins.serveStatic({
-  //   directory: __dirname,
-  //   default: 'index.html',
+
+// if(process.env.NODE_ENV==='production')
+// {
+//   server.get("/",(req,res)=>{ restify.plugins.serveStatic({
+//     directory: __dirname,
+//     default: 'index.html',
     
-  //  })
-  //  res.sendFile(path.join(__dirname,'client','build','index.html'))
-  // });
-  server.get(
-    /\/(.*)?.*/,
-    restify.plugins.serveStatic({
-      directory: __dirname,
-    })
-  )
-// server.use(restify.serveStatic('client/build'))
-// server.get('*',(req,res)=>{
-//   res.sendFile(path.join(__dirname,'client','build','index.html'))
-// })
-}
+//    })
+   
+//   });
+
+// // server.use(restify.serveStatic('client/build'))
+// // server.get('*',(req,res)=>{
+// //   res.sendFile(path.join(__dirname,'client','build','index.html'))
+// // })
+// }
 // server.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "client/build/index.html"));
 // });
