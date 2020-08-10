@@ -11,9 +11,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm run start --prefix client",
-    "server": "nodemon index.js",
+    "server": "nodemon Server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "node index.js",
+    "start": "node Server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
