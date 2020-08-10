@@ -59,7 +59,7 @@ if(process.env.NODE_ENV==='production')
   // );
 
   server.get("/.*/", restify.plugins.serveStatic({
-    directory: 'client',
+    directory: __dirname+'client/',
     default: 'index.html'
     }));
 
