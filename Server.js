@@ -49,7 +49,7 @@ server.get('/login',logIn)
 server.get('/employees',demotable)
 
 
-if(process.env.NODE_ENV==='production')
+if(process.env.NODE_ENV==='development')
 {
   server.get("*", restify.plugins.serveStatic({
     directory: __dirname+"/client/build",
