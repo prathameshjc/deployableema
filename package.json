@@ -18,6 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "gh-pages": "^3.1.0",
+    "http-proxy-middleware": "^1.0.5",
     "jquery": "^3.5.1",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
@@ -25,7 +27,8 @@
     "restify-cors-middleware2": "^2.1.0",
     "sequelize": "^6.3.3",
     "sequelize-cli": "^6.2.0",
-    "serve-static-restify": "^3.0.0"
+    "serve-static-restify": "^3.0.0",
+    "source-map-explorer": "^2.4.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
